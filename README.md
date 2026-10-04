@@ -277,6 +277,11 @@ See `docs/DEMO.md` for the presentation flow and fallback modes.
 - `docs/PRIVACY.md` — local-first storage and future sharing rules.
 - `docs/DEMO.md` — primary presentation flow and fallback modes.
 
+## Team
+
+- **Vinod** (`@vinodyallur`) — co-author and engineering lead.
+- **Srushti RM** (`srushtirm`) — co-author and product collaborator.
+
 ## Contributing and security
 
 Read `CONTRIBUTING.md` before opening a pull request. Report security or privacy
