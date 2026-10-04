@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="TextAppearance.CycleSync.Title" parent="TextAppearance.MaterialComponents.Headline5">
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textColor">@color/cs_text</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <style name="TextAppearance.CycleSync.Section" parent="TextAppearance.MaterialComponents.Subtitle1">
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textColor">@color/cs_text</item>
+        <item name="android:textSize">17sp</item>
+    </style>
+
+    <style name="TextAppearance.CycleSync.Body" parent="TextAppearance.MaterialComponents.Body2">
+        <item name="android:textColor">@color/cs_text_muted</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="TextAppearance.CycleSync.Caption" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="android:textColor">@color/cs_text_muted</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="TextAppearance.CycleSync.Status" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textColor">@color/cs_green</item>
+        <item name="android:textSize">11sp</item>
+    </style>
+
+    <style name="TextAppearance.CycleSync.Value" parent="TextAppearance.MaterialComponents.Subtitle1">
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textColor">@color/cs_text</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="TextAppearance.CycleSync.Metric" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="android:textColor">@color/cs_text_muted</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="TextAppearance.CycleSync.RecommendationMetric" parent="TextAppearance.MaterialComponents.Subtitle1">
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/cs_purple</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="TextAppearance.CycleSync.Safety" parent="TextAppearance.MaterialComponents.Body2">
+        <item name="android:textColor">@color/cs_green</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+
+    <style name="TextAppearance.CycleSync.Disclaimer" parent="TextAppearance.MaterialComponents.Caption">
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/cs_amber</item>
+        <item name="android:textSize">11sp</item>
+    </style>
+
+    <style name="Widget.CycleSync.Card" parent="Widget.MaterialComponents.CardView">
+        <item name="cardBackgroundColor">@color/cs_surface</item>
+        <item name="cardCornerRadius">12dp</item>
+        <item name="cardElevation">0dp</item>
+        <item name="strokeColor">@color/cs_surface_high</item>
+        <item name="strokeWidth">1dp</item>
+    </style>
+
+    <style name="Widget.CycleSync.PrimaryButton" parent="Widget.MaterialComponents.Button">
+        <item name="android:textColor">@color/cs_background</item>
+        <item name="backgroundTint">@color/cs_pink</item>
+        <item name="cornerRadius">12dp</item>
+    </style>
+
+    <style name="Widget.CycleSync.SecondaryButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:textColor">@color/cs_pink</item>
+        <item name="cornerRadius">12dp</item>
+        <item name="strokeColor">@color/cs_pink</item>
+    </style>
+
+    <style name="Widget.CycleSync.StopButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:textColor">@color/cs_red</item>
+        <item name="cornerRadius">12dp</item>
+        <item name="strokeColor">@color/cs_red</item>
+    </style>
+</resources>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">CycleSync</string>
+    <string name="local_private_ai">Private, on-device recommendations</string>
+    <string name="disconnected">Disconnected</string>
+    <string name="connect_prompt">Connect to begin a local session</string>
+    <string name="connect_device">Connect CycleSync device</string>
+    <string name="how_are_you_feeling">How are you feeling?</string>
+    <string name="current_pain">Current pain</string>
+    <string name="current_comfort">Current comfort</string>
+    <string name="live_sensor_data">Live sensor data</string>
+    <string name="signal_quality_placeholder">Signal quality  —</string>
+    <string name="heart_rate_placeholder">Heart rate  —</string>
+    <string name="spo2_placeholder">SpO₂  —</string>
+    <string name="emg_placeholder">EMG feature  —</string>
+    <string name="generate_recommendation">Generate private recommendation</string>
+    <string name="on_device_recommendation">On-device recommendation</string>
+    <string name="review_and_apply">Review and apply to bench device</string>
+    <string name="device_state">Device state</string>
+    <string name="idle">Idle</string>
+    <string name="emergency_stop">Stop session</string>
+    <string name="prototype_disclaimer">Engineering prototype only. Not a medical device; no diagnosis or effectiveness claim.</string>
+    <string name="score_value">%1$d / 10</string>
+    <string name="percent_value">%1$d%%</string>
+    <string name="heart_rate_value">%1$d bpm</string>
+    <string name="spo2_value">%1$d%%</string>
+    <string name="emg_value">%1$.3f RMS</string>
+    <string name="not_available">—</string>
+    <string name="level_value">Level %1$d</string>
+    <string name="duration_value">%1$d min</string>
+    <string name="safety_waiting">Safety checks waiting</string>
+    <string name="safety_passed">%1$d safety checks passed · confirmation required</string>
+</resources>

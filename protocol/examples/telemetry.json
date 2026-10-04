@@ -1,0 +1,17 @@
+{
+  "protocolVersion": 1,
+  "kind": "telemetry",
+  "deviceId": "cyclesync-devkit-01",
+  "sessionId": "demo-session-001",
+  "sequence": 17,
+  "timestampMs": 1791129600000,
+  "payload": {
+    "signalQuality": 0.93,
+    "painScore": 6,
+    "comfortScore": 4,
+    "emgRms": 0.18,
+    "heartRateBpm": 74,
+    "spo2Percent": 98,
+    "batteryPercent": 82
+  }
+}

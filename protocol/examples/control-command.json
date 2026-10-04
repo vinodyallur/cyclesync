@@ -1,0 +1,14 @@
+{
+  "protocolVersion": 1,
+  "kind": "control_command",
+  "deviceId": "cyclesync-devkit-01",
+  "sessionId": "demo-session-001",
+  "sequence": 19,
+  "timestampMs": 1791129602000,
+  "payload": {
+    "action": "apply_setting",
+    "settingLevel": 3,
+    "durationSeconds": 600,
+    "userConfirmed": true
+  }
+}

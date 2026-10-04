@@ -1,0 +1,14 @@
+{
+  "protocolVersion": 1,
+  "kind": "ack",
+  "deviceId": "cyclesync-devkit-01",
+  "sessionId": "demo-session-001",
+  "sequence": 20,
+  "timestampMs": 1791129602100,
+  "payload": {
+    "acknowledgedSequence": 19,
+    "accepted": true,
+    "state": "active",
+    "reason": null
+  }
+}

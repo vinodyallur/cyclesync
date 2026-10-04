@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.CycleSync" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/cs_pink</item>
+        <item name="colorPrimaryVariant">@color/cs_pink</item>
+        <item name="colorSecondary">@color/cs_purple</item>
+        <item name="android:colorAccent">@color/cs_pink</item>
+        <item name="android:navigationBarColor">@color/cs_background</item>
+        <item name="android:statusBarColor">@color/cs_background</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+</resources>

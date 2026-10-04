@@ -1,0 +1,19 @@
+{
+  "protocolVersion": 1,
+  "kind": "recommendation",
+  "deviceId": "cyclesync-devkit-01",
+  "sessionId": "demo-session-001",
+  "sequence": 18,
+  "timestampMs": 1791129601000,
+  "payload": {
+    "suggestedLevel": 3,
+    "durationSeconds": 600,
+    "confidence": 0.78,
+    "explanation": "Pain is elevated, signal quality is stable, and the previous accepted level was 2.",
+    "safetyChecks": [
+      "signal_quality_ok",
+      "within_setting_limit",
+      "within_duration_limit"
+    ]
+  }
+}

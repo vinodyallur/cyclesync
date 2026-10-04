@@ -1,0 +1,125 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://cyclesync.dev/protocol/cyclesync.schema.json",
+  "title": "CycleSync BLE message",
+  "type": "object",
+  "required": [
+    "protocolVersion",
+    "kind",
+    "deviceId",
+    "sessionId",
+    "sequence",
+    "timestampMs",
+    "payload"
+  ],
+  "properties": {
+    "protocolVersion": { "const": 1 },
+    "kind": {
+      "enum": ["telemetry", "recommendation", "control_command", "ack"]
+    },
+    "deviceId": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_-]{3,64}$"
+    },
+    "sessionId": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_-]{8,64}$"
+    },
+    "sequence": { "type": "integer", "minimum": 0 },
+    "timestampMs": { "type": "integer", "minimum": 0 },
+    "payload": { "type": "object" }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "kind": { "const": "telemetry" } } },
+      "then": { "properties": { "payload": { "$ref": "#/$defs/telemetry" } } }
+    },
+    {
+      "if": { "properties": { "kind": { "const": "recommendation" } } },
+      "then": { "properties": { "payload": { "$ref": "#/$defs/recommendation" } } }
+    },
+    {
+      "if": { "properties": { "kind": { "const": "control_command" } } },
+      "then": { "properties": { "payload": { "$ref": "#/$defs/controlCommand" } } }
+    },
+    {
+      "if": { "properties": { "kind": { "const": "ack" } } },
+      "then": { "properties": { "payload": { "$ref": "#/$defs/ack" } } }
+    }
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "telemetry": {
+      "type": "object",
+      "required": ["signalQuality", "painScore", "comfortScore", "emgRms"],
+      "properties": {
+        "signalQuality": { "type": "number", "minimum": 0, "maximum": 1 },
+        "painScore": { "type": "integer", "minimum": 0, "maximum": 10 },
+        "comfortScore": { "type": "integer", "minimum": 0, "maximum": 10 },
+        "emgRms": { "type": ["number", "null"], "minimum": 0 },
+        "heartRateBpm": { "type": ["number", "null"], "minimum": 20, "maximum": 240 },
+        "spo2Percent": { "type": ["number", "null"], "minimum": 50, "maximum": 100 },
+        "batteryPercent": { "type": "integer", "minimum": 0, "maximum": 100 }
+      },
+      "additionalProperties": false
+    },
+    "recommendation": {
+      "type": "object",
+      "required": [
+        "suggestedLevel",
+        "durationSeconds",
+        "confidence",
+        "explanation",
+        "safetyChecks"
+      ],
+      "properties": {
+        "suggestedLevel": { "type": "integer", "minimum": 1, "maximum": 10 },
+        "durationSeconds": { "type": "integer", "minimum": 30, "maximum": 1800 },
+        "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+        "explanation": { "type": "string", "minLength": 1, "maxLength": 500 },
+        "safetyChecks": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1, "maxLength": 80 },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "controlCommand": {
+      "oneOf": [
+        {
+          "type": "object",
+          "required": ["action", "settingLevel", "durationSeconds", "userConfirmed"],
+          "properties": {
+            "action": { "const": "apply_setting" },
+            "settingLevel": { "type": "integer", "minimum": 1, "maximum": 10 },
+            "durationSeconds": { "type": "integer", "minimum": 30, "maximum": 1800 },
+            "userConfirmed": { "const": true }
+          },
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "required": ["action", "reason"],
+          "properties": {
+            "action": { "const": "stop" },
+            "reason": { "type": "string", "minLength": 1, "maxLength": 160 }
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "ack": {
+      "type": "object",
+      "required": ["acknowledgedSequence", "accepted", "state"],
+      "properties": {
+        "acknowledgedSequence": { "type": "integer", "minimum": 0 },
+        "accepted": { "type": "boolean" },
+        "state": { "enum": ["idle", "active", "stopped", "rejected"] },
+        "reason": { "type": ["string", "null"], "maxLength": 160 }
+      },
+      "additionalProperties": false
+    }
+  }
+}

@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cs_background"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="20dp"
+        android:paddingTop="24dp"
+        android:paddingEnd="20dp"
+        android:paddingBottom="36dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/ic_cyclesync" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/TextAppearance.CycleSync.Title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/app_name" />
+
+                <TextView
+                    style="@style/TextAppearance.CycleSync.Caption"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/local_private_ai" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/connectionValue"
+                style="@style/TextAppearance.CycleSync.Status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_status"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="7dp"
+                android:text="@string/disconnected" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/statusText"
+            style="@style/TextAppearance.CycleSync.Caption"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/connect_prompt" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/connectButton"
+            style="@style/Widget.CycleSync.SecondaryButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@string/connect_device" />
+
+        <com.google.android.material.card.MaterialCardView
+            style="@style/Widget.CycleSync.Card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="18dp">
+
+                <TextView
+                    style="@style/TextAppearance.CycleSync.Section"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/how_are_you_feeling" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/TextAppearance.CycleSync.Body"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/current_pain" />
+
+                    <TextView
+                        android:id="@+id/painValue"
+                        style="@style/TextAppearance.CycleSync.Value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="7 / 10" />
+                </LinearLayout>
+
+                <com.google.android.material.slider.Slider
+                    android:id="@+id/painSlider"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:stepSize="1"
+                    android:value="7"
+                    android:valueFrom="0"
+                    android:valueTo="10"
+                    app:haloColor="@color/cs_pink_translucent"
+                    app:thumbColor="@color/cs_pink"
+                    app:trackActiveTint="@color/cs_pink"
+                    app:trackInactiveTint="@color/cs_track" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/TextAppearance.CycleSync.Body"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/current_comfort" />
+
+                    <TextView
+                        android:id="@+id/comfortValue"
+                        style="@style/TextAppearance.CycleSync.Value"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="5 / 10" />
+                </LinearLayout>
+
+                <com.google.android.material.slider.Slider
+                    android:id="@+id/comfortSlider"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:stepSize="1"
+                    android:value="5"
+                    android:valueFrom="0"
+                    android:valueTo="10"
+                    app:haloColor="@color/cs_purple_translucent"
+                    app:thumbColor="@color/cs_purple"
+                    app:trackActiveTint="@color/cs_purple"
+                    app:trackInactiveTint="@color/cs_track" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            style="@style/Widget.CycleSync.Card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="18dp">
+
+                <TextView
+                    style="@style/TextAppearance.CycleSync.Section"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/live_sensor_data" />
+
+                <TextView
+                    android:id="@+id/signalQualityValue"
+                    style="@style/TextAppearance.CycleSync.Metric"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:text="@string/signal_quality_placeholder" />
+
+                <TextView
+                    android:id="@+id/heartRateValue"
+                    style="@style/TextAppearance.CycleSync.Metric"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/heart_rate_placeholder" />
+
+                <TextView
+                    android:id="@+id/spo2Value"
+                    style="@style/TextAppearance.CycleSync.Metric"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/spo2_placeholder" />
+
+                <TextView
+                    android:id="@+id/emgValue"
+                    style="@style/TextAppearance.CycleSync.Metric"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/emg_placeholder" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/recommendButton"
+            style="@style/Widget.CycleSync.PrimaryButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:text="@string/generate_recommendation" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/recommendationCard"
+            style="@style/Widget.CycleSync.Card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="18dp">
+
+                <TextView
+                    style="@style/TextAppearance.CycleSync.Section"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/on_device_recommendation" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/recommendedLevelValue"
+                        style="@style/TextAppearance.CycleSync.RecommendationMetric"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Level 3" />
+
+                    <TextView
+                        android:id="@+id/durationValue"
+                        style="@style/TextAppearance.CycleSync.RecommendationMetric"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="10 min" />
+
+                    <TextView
+                        android:id="@+id/confidenceValue"
+                        style="@style/TextAppearance.CycleSync.RecommendationMetric"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="80%" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/explanationValue"
+                    style="@style/TextAppearance.CycleSync.Body"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp" />
+
+                <TextView
+                    android:id="@+id/safetyValue"
+                    style="@style/TextAppearance.CycleSync.Safety"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="@string/safety_waiting" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/applyButton"
+                    style="@style/Widget.CycleSync.PrimaryButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:enabled="false"
+                    android:text="@string/review_and_apply" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/TextAppearance.CycleSync.Body"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/device_state" />
+
+            <TextView
+                android:id="@+id/deviceStateValue"
+                style="@style/TextAppearance.CycleSync.Value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/idle" />
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/stopButton"
+            style="@style/Widget.CycleSync.StopButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="@string/emergency_stop" />
+
+        <TextView
+            style="@style/TextAppearance.CycleSync.Disclaimer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/prototype_disclaimer" />
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

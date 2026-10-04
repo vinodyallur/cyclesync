@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="cs_background">#0E1118</color>
+    <color name="cs_surface">#171C27</color>
+    <color name="cs_surface_high">#202637</color>
+    <color name="cs_text">#F7F8FC</color>
+    <color name="cs_text_muted">#A9B2C5</color>
+    <color name="cs_pink">#F15A88</color>
+    <color name="cs_pink_translucent">#40F15A88</color>
+    <color name="cs_purple">#9D70F7</color>
+    <color name="cs_purple_translucent">#409D70F7</color>
+    <color name="cs_green">#68E0A0</color>
+    <color name="cs_amber">#F0B31C</color>
+    <color name="cs_red">#FF667A</color>
+    <color name="cs_track">#354052</color>
+</resources>
